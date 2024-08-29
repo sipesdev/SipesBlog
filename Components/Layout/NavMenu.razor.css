@@ -1,0 +1,23 @@
+.navbar {
+    list-style-type: none;
+    padding: 0;
+    padding-top: 2em;
+    position: sticky;
+    width: 100%;
+    justify-content: center;
+    display: flex;
+}
+
+.nav-item {
+    margin: 0 15px;
+}
+
+.nav-button {
+    transition: 0.2s color;
+    text-decoration: none;
+    color: silver;
+}
+
+.nav-button:focus, .nav-button:active:focus, .nav-button:hover {
+    color: purple;
+}
