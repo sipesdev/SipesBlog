@@ -1,0 +1,10 @@
+.center-content {
+    width: 100%;
+    justify-content: center;
+    display: flex;
+}
+
+.profile-pic {
+    border-radius: 50%;
+    size: 100px;
+}
