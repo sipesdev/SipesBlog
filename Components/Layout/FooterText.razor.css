@@ -1,0 +1,29 @@
+.footer-text 
+{
+   position: relative;
+   display: block;
+   bottom: 0;
+   left: 50%;
+   transform: translateX(-50%);
+   padding-bottom: 2em; 
+   text-align: center;
+   text-decoration: none;
+   color: silver;
+}
+
+.name-highlight
+{
+    color: purple;
+}
+
+.footer-link
+{
+    transition: 0.2s color;
+    text-decoration: none;
+    color: orange;
+}
+
+.footer-link:focus, .footer-link:active:focus, .footer-link:hover
+{
+    color: orangered;
+}
