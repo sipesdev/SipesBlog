@@ -6,5 +6,13 @@
 
 .profile-pic {
     border-radius: 50%;
-    height: 10em;
+    width: 15%;
+}
+
+.links-stuff
+{
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    padding: 5%;
 }
