@@ -1,9 +1,37 @@
 html, body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: 'JetBrains Mono', monospace, sans-serif;
     min-height: 100vh;
     min-width: 100vw;
     color: silver;
     background-color: black;
+}
+
+@font-face {
+    font-family: 'JetBrains Mono', monospace;
+    src: url(fonts/JetBrainsMono-Regular.woff2),
+        url(fonts/JetBrainsMono-Regular.woff),
+        url(fonts/JetBrainsMono-Regular.ttf);
+    font-display: optional;
+}
+
+@font-face {
+    font-family: 'JetBrains Mono', monospace;
+    src: url(fonts/JetBrainsMono-Bold.woff2),
+         url(fonts/JetBrainsMono-Bold.woff),
+         url(fonts/JetBrainsMono-Bold.ttf);
+    font-weight: 700;
+    font-style: italic;
+    font-display: optional;
+}
+
+@font-face {
+    font-family: 'JetBrains Mono', monospace;
+    src: url(fonts/JetBrainsMono-Italic.woff2),
+         url(fonts/JetBrainsMono-Italic.woff),
+         url(fonts/JetBrainsMono-Italic.ttf);
+    font-weight: 700;
+    font-style: bold;
+    font-display: optional;
 }
 
 a, .btn-link {
