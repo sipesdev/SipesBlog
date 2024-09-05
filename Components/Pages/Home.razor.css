@@ -1,22 +1,33 @@
 .center-content {
-    width: 100%;
-    justify-content: center;
-    display: flex;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    text-align: center;
 }
 
 .profile-pic {
     border-radius: 50%;
-    width: 15%;
+    width: 15vw;
+    min-width: 100px;
 }
 
 .link-stuff {
-    width: 100%;
-    justify-content: center;
-    display: flex;
-    padding: 5%;
+    width: 50%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    text-align: center;
 }
 
 .link-item {
+    transition: 0.2s color;
     color: silver;
     text-decoration: none;
+}
+
+.link-item:focus, .link-item:active:focus, .link-item:hover {
+    color: purple;
 }
