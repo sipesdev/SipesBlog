@@ -9,16 +9,14 @@
     width: 15%;
 }
 
-.link-stuff
-{
+.link-stuff {
     width: 100%;
     justify-content: center;
     display: flex;
     padding: 5%;
 }
 
-.link-item
-{
+.link-item {
     color: silver;
     text-decoration: none;
 }
