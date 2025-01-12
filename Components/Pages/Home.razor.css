@@ -8,8 +8,10 @@
 
 .profile-pic {
     border-radius: 50%;
-    width: 15vw;
+    width: 12vw;
     min-width: 100px;
+    margin-top: 5vw;
+    margin-bottom: 2vw;
 }
 
 .link-stuff {
