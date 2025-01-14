@@ -1,0 +1,36 @@
+name: Continuous Deployment
+
+on:
+  push:
+    branches: [ main ]
+
+env:
+  REGISTRY: ghcr.io # Github container registry
+  IMAGE_NAME: ${{ github.actor }}/sipes-site:latest
+
+jobs:
+  build_container:
+    name: Build Container
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@main
+      - name: Sign in to Github container hub
+        run: echo ${{ secrets.CONTAINER_PAT }} | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+      - name: Build image
+        run: docker build . --tag ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+      - name: Publish to container hub
+        run: docker push ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+
+  deploy:
+    name: Deploy Container
+    needs: build_container
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install ssh keys
+        run: install -m 600 -D /dev/null ~/.ssh/id_rsa &&
+            echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa &&
+            ssh-keyscan -H ${{ secrets.SSH_HOST }} > ~/.ssh/known_hosts
+      - name: Connect and pullv
+        run: ssh ${{ secrets.SSH_USER }}@{{ secrets.SSH_HOST }} "cd ${{ secrets.WORK_DIR }} && docker compose pull && docker compose up -d && exit"
+      - name: Cleanup
+        run: rm -rf ~/.ssh

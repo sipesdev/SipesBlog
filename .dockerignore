@@ -1,6 +1,5 @@
 bin/
 obj/
-Publish/
 .DS_STORE
 .vs/
-[Pp]ublish/
+Dockerfile
